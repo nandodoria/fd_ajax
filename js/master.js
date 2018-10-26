@@ -1,6 +1,11 @@
 (() => {
+
+    const cars = document.querySelectorAll('.data-ref');
+
     function getData() {
-        let targetURL = "./includes/connect.php?modelNo=R58";
+       
+        // whenever we click on a thumbnail, pass its id to the php query
+        let targetURL = `./includes/connect.php?modelNo=${this.id}`;
 
         fetch (targetURL) //go get the data and bring it back
         .then(res => res.json()) // turn the result into a plain JS object
@@ -23,5 +28,7 @@
         document.querySelector('.modelDetails').textContent = modelDetails;
     }
 
-    getData(); //trigger the getData function
+    cars.forEach(car => car.addEventListener("click", getData));
+
+    //getData(); //trigger the getData function
 })();
