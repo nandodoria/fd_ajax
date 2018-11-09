@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $password = "root";
-$db = "cooperInfo";
+$db = "db_cooperInfo";
 
 $conn = mysqli_connect($host, $user, $password, $db);
 
