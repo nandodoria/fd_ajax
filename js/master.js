@@ -24,7 +24,17 @@
 
          updated : function(){
             console.log('things are different now');
-        },
+            //move the preloader out of the element and hide it
+            let preloader = document.querySelector('.preloader-wrapper');
+
+            //hide the preloader with css
+            //move it to the bottom of the page - ready for the next Ajax call
+            setTimeout(function(){
+            preloader.classList.add('hidden');
+            document.body.appendChild(preloader);
+        }, 1000); //1000ms = 1 second
+
+    },
 
 
          methods : {
