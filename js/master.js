@@ -9,7 +9,39 @@
 
          },
 
+         mounted : function(){
+             console.log('view is ready to go on the page');
+            // get the element we want to add the preloader too, and pass it to the preloader function
+            this.addPreloader(document.querySelector('.modelInfo'));
+
+             //trigger an ajax call with a mocked clicked event
+             document.querySelector('#F55').click();
+         },
+
+         beforeUpdate : function(){
+             console.log('things are gonna change...');
+         },
+
+         updated : function(){
+            console.log('things are different now');
+        },
+
+
          methods : {
+
+            addPreloader(parentEl){
+                //load the preloader into the parent element and make it draw
+                let preloader = document.querySelector('.preloader-wrapper');
+
+                parentEl.appendChild(preloader);
+
+                let animItem = bodymovin.loadAnimation({
+                    wrapper : document.querySelector('.preloader'),
+                    animType : 'svg',
+                    loop : true,
+                    path : 'data/search.json'
+                })
+            },
 
             fetchData(e) {
                 //debugger;

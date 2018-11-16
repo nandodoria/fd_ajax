@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/overrides.css">
     <script src="js/vendor/modernizr.js"></script>
+    <!--put bodymovin plugin here-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.4.1/lottie.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 
   </head>
@@ -35,8 +37,8 @@
 
           <!-- ===== USE THESE IMG ELEMENTS (hint - an attribute is key) TO RETRIEVE THE DATA === -->
           <img v-on:click="fetchData" class="data-ref" src="images/F55.jpg" alt="blue mini" id="F55" data-roundaboutindex="0">
-          <img v-on:click="fetchData" src="images/F56.jpg" alt="yellow mini" id="F56" data-roundaboutindex="1">
-          <img v-on:click="fetchData" src="images/R57.jpg" alt="convertible mini" id="R58" data-roundaboutindex="2">
+          <img v-on:click="fetchData" class="data-ref" src="images/F56.jpg" alt="yellow mini" id="F56" data-roundaboutindex="1">
+          <img v-on:click="fetchData" class="data-ref" src="images/R57.jpg" alt="convertible mini" id="R58" data-roundaboutindex="2">
 
         </div>
         <hr>
@@ -54,6 +56,16 @@
       </div>
 
       <!-- model info block  -->
+
+
+      <!-- preloader wrapper here-->
+      <div class="preloader-wraper">
+        <!-- preloader-->
+        <div class="preloader"></div>
+      </div>
+
+
+
 
       <!-- ==== POPULATE THESE ELEMENTS WITH THE QUERY RESULT === -->
       <div class="small-6 columns modelInfo">
